@@ -1,13 +1,12 @@
 package amerinda.games.blackjack
 
-import org.junit.Test
-
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertSame
+import org.junit.Test
 
 class ParticipantTest {
 
-    var participant = Participant("Carol")
+    private var participant = Participant("Carol")
 
     @Test
     fun getCards() {

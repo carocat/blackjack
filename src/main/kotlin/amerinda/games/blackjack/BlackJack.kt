@@ -29,9 +29,9 @@ fun main() {
         hasWinner = blackJackWinnerRound.hasWinner()
     }
     blackJackWinnerRound.checkWinnerAfterRounds()
-    PrintParticipantState().printWinner(player, dealer)
-    PrintParticipantState().printOutput(player)
-    PrintParticipantState().printOutput(dealer)
+    PrintWinner.printWinner(player, dealer)
+    PrintParticipantHand.printOutput(player)
+    PrintParticipantHand.printOutput(dealer)
 
 }
 
