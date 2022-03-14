@@ -6,7 +6,7 @@ package amerinda.games.blackjack
 class PrintWinner {
 
     /**
-     * Print in the format winner is name
+     * Print winner name
      */
     companion object {
         fun printWinner(player: Player, dealer: Dealer) {

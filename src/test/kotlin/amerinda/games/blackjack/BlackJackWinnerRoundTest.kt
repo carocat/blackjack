@@ -11,22 +11,19 @@ class BlackJackWinnerRoundTest {
     private var blackJackWinnerRound = BlackJackWinnerRound(player, dealer)
 
     @Test
-    fun hasWinner() {
-        assertSame(false, blackJackWinnerRound.hasWinner())
-    }
-
-    @Test
     fun checkIfWinnerPlayerRound() {
         player.score = BlackJackScores.BLACK_JACK
-        blackJackWinnerRound.checkIfWinnerPlayerRound()
+        val hasWinner = blackJackWinnerRound.checkIfWinnerPlayerRound()
         assertSame(true, player.isWinner)
+        assertSame(true, hasWinner)
     }
 
     @Test
     fun checkIfWinnerDealerRound() {
         dealer.score = BlackJackScores.GT_THAN_BLACK_JACK
-        blackJackWinnerRound.checkIfWinnerDealerRound()
+        val hasWinner = blackJackWinnerRound.checkIfWinnerDealerRound()
         assertSame(true, player.isWinner)
+        assertSame(true, hasWinner)
     }
 
     @Test

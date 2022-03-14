@@ -8,20 +8,22 @@ class BlackJackWinnerRound(private val player: Player, private val dealer: Deale
     /**
      * Check if winner in player round
      */
-    fun checkIfWinnerPlayerRound() {
+    fun checkIfWinnerPlayerRound():Boolean  {
         when {
             player.score == BlackJackScores.BLACK_JACK -> player.isWinner = true
             player.score > BlackJackScores.BLACK_JACK -> dealer.isWinner = true
         }
+        return hasWinner()
     }
 
     /**
      * Check if winner in dealer round
      */
-    fun checkIfWinnerDealerRound() {
+    fun checkIfWinnerDealerRound():Boolean {
         when {
             dealer.score > BlackJackScores.BLACK_JACK -> player.isWinner = true
         }
+        return hasWinner()
     }
 
     /**
@@ -37,18 +39,19 @@ class BlackJackWinnerRound(private val player: Player, private val dealer: Deale
     /**
      * Returns true if there is already a winner in the game
      */
-    fun hasWinner(): Boolean {
+    private fun hasWinner(): Boolean {
         return player.isWinner || dealer.isWinner
     }
 
     /**
      * Check if there is a winner after the dealer distributed the cards
      */
-    fun checkIfWinnerStartGameRound() {
+    fun checkIfWinnerStartGameRound():Boolean {
         when {
             player.score == BlackJackScores.BLACK_JACK -> player.isWinner = true
             isGreaterThanBlackJack(dealer) && isGreaterThanBlackJack(player) -> dealer.isWinner = true
         }
+        return hasWinner()
     }
 
     /**

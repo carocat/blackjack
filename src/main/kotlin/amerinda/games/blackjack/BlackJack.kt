@@ -8,16 +8,14 @@ fun main() {
     val blackJackWinnerRound = BlackJackWinnerRound(player, dealer)
 
     blackJackGameRound.startGame()
-    blackJackWinnerRound.checkIfWinnerStartGameRound()
-    var hasWinner = blackJackWinnerRound.hasWinner()
+    var hasWinner = blackJackWinnerRound.checkIfWinnerStartGameRound()
 
     /**
      * PLayer must stop drawing cards from the deck if their total reaches 17 or higher
      */
     while (!hasWinner && (blackJackGameRound.getConditionPLayerRound())) {
         blackJackGameRound.playerRound()
-        blackJackWinnerRound.checkIfWinnerPlayerRound()
-        hasWinner = blackJackWinnerRound.hasWinner()
+        hasWinner = blackJackWinnerRound.checkIfWinnerPlayerRound()
     }
 
     /**
@@ -25,8 +23,7 @@ fun main() {
      */
     while (!hasWinner && (blackJackGameRound.getConditionDealerRound())) {
         blackJackGameRound.dealerRound()
-        blackJackWinnerRound.checkIfWinnerDealerRound()
-        hasWinner = blackJackWinnerRound.hasWinner()
+        hasWinner = blackJackWinnerRound.checkIfWinnerDealerRound()
     }
     blackJackWinnerRound.checkWinnerAfterRounds()
     PrintWinner.printWinner(player, dealer)
@@ -34,6 +31,8 @@ fun main() {
     PrintParticipantHand.printOutput(dealer)
 
 }
+
+
 
 
 
